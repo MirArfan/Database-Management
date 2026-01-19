@@ -224,7 +224,7 @@ Database keys are used to **uniquely identify records** and **establish relation
 | **Composite Key**| Primary key made of multiple columns.                                      |
 | **Unique Key**   | Ensures uniqueness of values but allows one NULL value.                     |
 
-![Keys](./images/keys-in-dbms.jpg)
+
 
 **Summary:**  
 - **Primary Key (প্রাথমিক কী):** প্রতিটি row আলাদা করে শনাক্ত করে।  
