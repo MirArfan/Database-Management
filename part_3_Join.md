@@ -119,6 +119,8 @@ WHERE A.course_id = B.course_id;
 - CROSS JOIN → Every Combination
 - SELF JOIN → Same Table Join
 
+### Diagram 
+![DBMS Languages](./images/join.jpeg)
 
 ### 📊 Quick Summary Table
 
