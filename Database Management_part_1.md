@@ -180,7 +180,7 @@ database transactions হবে **reliable**, **safe** এবং **data integrit
 
 ### 3️⃣ Isolation (বিচ্ছিন্নতা)
 
-➡️ একাধিক transaction একসাথে চললেও তারা একে অপরের কাজ **দেখতে বা প্রভাবিত করতে পারবে না**।
+➡️ একাধিক transaction একসাথে চললেও তারা একে অপরের কাজ **দেখতে বা প্রভাবিত করতে পারবে না**। (Concurrent transactions don't **interfere with each other**)
 
 - একটি transaction-এর **partial data** অন্য transaction দেখবে না  
 - সব transaction যেন **sequential** ভাবে চলছে—এমন feel দেয়
