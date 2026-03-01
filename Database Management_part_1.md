@@ -152,6 +152,7 @@ database transactions হবে **reliable**, **safe** এবং **data integrit
 #### 1️⃣ Atomicity (পরমাণুতা)
 
 ➡️ একটি transaction-এর সব step হয় **পুরোটা complete হবে**, না হলে **কিছুই হবে না**।
+(All operations in a transaction succeed or fail together)
 
 - Transaction মাঝপথে fail করলে → সব পরিবর্তন **rollback** হবে  
 - **Partial update কখনোই হবে না**
@@ -168,6 +169,7 @@ database transactions হবে **reliable**, **safe** এবং **data integrit
 ### 2️⃣ Consistency (সঙ্গতি)
 
 ➡️ Transaction শুরু হওয়ার আগে ও শেষ হওয়ার পরে database সবসময় **valid rules / constraints** follow করবে।
+   (Data remains valid according to defined rules)
 
 - Primary key, foreign key, balance rule ভাঙবে না  
 - Database কখনোই **invalid state**-এ যাবে না
@@ -193,6 +195,7 @@ database transactions হবে **reliable**, **safe** এবং **data integrit
 ### 4️⃣ Durability (দৃঢ়তা / স্থায়িত্ব)
 
 ➡️ একবার transaction **commit** হলে   system crash বা power failure হলেও data **permanently save** থাকবে।
+    (Committed changes survive system crashes)
 
 ### Example
 - টাকা transfer হওয়ার পর system crash হলেও  
