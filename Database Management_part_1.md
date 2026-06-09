@@ -74,7 +74,7 @@ It serves as a bridge between the data and the software application, ensuring da
 5. **Data Security**: Constraints, authentication, access control strong হয়।
 6. **Scalability**: বড় ডেটা সহজে ম্যানেজ করা যায়।
 7. **Transaction Support (ACID):**
-    - Atomicity – সব বা কিছুই হবে
+    - Atomicity – সব বা কিছুই হবে na
     - Consistency – valid state maintain করে
     - Isolation – এক ইউজারের কাজ অন্যকে disturb করবে না
     - Durability – power off হলেও data safe থাকে
@@ -195,8 +195,7 @@ database transactions হবে **reliable**, **safe** এবং **data integrit
 ➡️ একবার transaction **commit** হলে   system crash বা power failure হলেও data **permanently save** থাকবে।
 
 ### Example
-- টাকা transfer হওয়ার পর system crash হলেও  
-  updated balance ঠিকই থাকবে
+- টাকা transfer হওয়ার পর system crash হলেও updated balance ঠিকই থাকবে
 
 <br>
 
