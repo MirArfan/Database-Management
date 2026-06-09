@@ -184,6 +184,8 @@ Instructor হলো non-key attribute কিন্তু determinant → violat
 
 <br>
 
+---
+
 ### 1️⃣ SQL (Structured Query Language) Databases
 
 
