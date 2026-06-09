@@ -1011,3 +1011,52 @@ WHERE phone IS NULL
 > Use Logical Operators to combine conditions.
 >
 > Use Special Operators to write cleaner and more readable queries.
+
+
+<br>
+
+## 📌 SQL Special Operators
+
+
+
+### 💛 BETWEEN — Range Check
+
+### Features
+
+- নির্দিষ্ট রেঞ্জের মধ্যে value আছে কিনা চেক করে
+- **Inclusive** (start এবং end দুইটাই অন্তর্ভুক্ত)
+
+
+
+### Example
+
+```sql
+SELECT *
+FROM students
+WHERE age BETWEEN 12 AND 16;
+Equivalent Query
+WHERE age >= 12
+AND age <= 16;
+```
+
+### 💙 IN — List Match
+Features
+- একাধিক value-এর মধ্যে match চেক করে
+- Multiple OR condition-এর shortcut
+
+### Example
+```sql
+SELECT *
+FROM students
+WHERE course IN ('Django', 'ML', 'DL');
+Equivalent Query
+WHERE course = 'Django'
+   OR course = 'ML'
+   OR course = 'DL';
+``` 
+### 💡 Key Takeaways
+- BETWEEN → Range filtering (inclusive)
+- IN → Multiple value matching
+- দুটোই query আরও clean এবং readable করে
+- Complex OR conditions সহজ করে দেয়
+
