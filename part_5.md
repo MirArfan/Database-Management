@@ -1,6 +1,6 @@
 # 📌 Aggregate Functions
 
-## Definition
+### Definition
 
 Aggregate Function একাধিক Row-এর Data নিয়ে একটি Single Result Return করে।
 
@@ -28,9 +28,9 @@ Output:
 3.77
 ```
 
----
 
-## 📊 Common Aggregate Functions
+
+### 📊 Common Aggregate Functions
 
 | Function | Purpose |
 |-----------|---------|
@@ -40,9 +40,9 @@ Output:
 | `MIN()` | Smallest Value |
 | `MAX()` | Largest Value |
 
----
 
-## 🔢 COUNT()
+
+### 🔢 COUNT()
 
 ### Purpose
 
@@ -61,9 +61,9 @@ FROM students;
 7
 ```
 
----
 
-## ➕ SUM()
+
+### ➕ SUM()
 
 ### Purpose
 
@@ -76,9 +76,9 @@ SELECT SUM(marks)
 FROM students;
 ```
 
----
 
-## 📈 AVG()
+
+### 📈 AVG()
 
 ### Purpose
 
@@ -91,9 +91,9 @@ SELECT AVG(gpa)
 FROM students;
 ```
 
----
 
-## 🔽 MIN()
+
+### 🔽 MIN()
 
 ### Purpose
 
@@ -106,9 +106,9 @@ SELECT MIN(gpa)
 FROM students;
 ```
 
----
 
-## 🔼 MAX()
+
+### 🔼 MAX()
 
 ### Purpose
 
@@ -121,9 +121,12 @@ SELECT MAX(gpa)
 FROM students;
 ```
 
----
+<br>
 
-## 📌 ROUND() Function
+
+### 📌 ROUND() Function
+
+<br>
 
 ⚠️ `ROUND()` Aggregate Function নয়।
 
@@ -155,9 +158,8 @@ Becomes:
 3.77
 ```
 
----
 
-## 📊 Aggregate Function vs Scalar Function
+### 📊 Aggregate Function vs Scalar Function
 
 | Type | Works On | Returns |
 |--------|----------|----------|
@@ -178,9 +180,9 @@ Scalar Function:
 ROUND(3.77142857, 2)
 ```
 
----
 
-## 📌 Quick Summary
+
+### 📌 Quick Summary
 
 | Function | Category | Purpose |
 |----------|----------|----------|
@@ -191,9 +193,9 @@ ROUND(3.77142857, 2)
 | MAX() | Aggregate | Largest Value |
 | ROUND() | Scalar | Format Numeric Values |
 
----
 
-## 💡 Interview Tips
+
+### 💡 Interview Tips
 
 - Aggregate Functions summarize data.
 - Multiple Rows → Single Result.
@@ -207,9 +209,9 @@ ROUND(3.77142857, 2)
 - `ROUND()` is **not** an Aggregate Function.
 - `ROUND()` is commonly used to format the output of Aggregate Functions.
 
----
 
-## 🔥 Golden Rule
+
+### 🔥 Golden Rule
 
 > Aggregate Functions take multiple rows and return a single value.
 
@@ -217,11 +219,12 @@ ROUND(3.77142857, 2)
 
 > `ROUND()` is a Scalar Function used to format numeric results.
 
----
+<br>
 
-# 📌 GROUP BY
 
-## Definition
+## 📌 GROUP BY
+
+### Definition
 
 `GROUP BY` একটি Column-এর ভিত্তিতে Data-কে Group করে এবং প্রতিটি Group-এর উপর Aggregate Function চালায়।
 
@@ -239,9 +242,9 @@ With `GROUP BY`
 Each Group → 1 Result
 ```
 
----
 
-## Example
+
+### Example
 
 ### Without GROUP BY
 
@@ -258,7 +261,6 @@ FROM students;
 
 এখানে পুরো Table-এর জন্য একটি Summary Result পাওয়া যায়।
 
----
 
 ### With GROUP BY
 
@@ -283,9 +285,9 @@ Agentic AI    → 1 Student
 
 এখানে প্রতিটি Course আলাদা Group হিসেবে বিবেচিত হয়েছে।
 
----
 
-## 📊 Common Aggregate Functions with GROUP BY
+
+### 📊 Common Aggregate Functions with GROUP BY
 
 নিচের Aggregate Functions-গুলো সাধারণত `GROUP BY`-এর সাথে ব্যবহার করা হয়:
 
@@ -297,9 +299,8 @@ Agentic AI    → 1 Student
 | `MIN()` | Smallest Value |
 | `MAX()` | Largest Value |
 
----
 
-## 🔹 COUNT() with GROUP BY
+### 🔹 COUNT() with GROUP BY
 
 ```sql
 SELECT course,
@@ -310,9 +311,8 @@ GROUP BY course;
 
 প্রতিটি Course-এ কতজন Student আছে তা দেখাবে।
 
----
 
-## 🔹 AVG() with GROUP BY
+### 🔹 AVG() with GROUP BY
 
 ```sql
 SELECT course,
@@ -323,9 +323,9 @@ GROUP BY course;
 
 প্রতিটি Course-এর Average GPA দেখাবে।
 
----
 
-## 🔹 MAX() with GROUP BY
+
+### 🔹 MAX() with GROUP BY
 
 ```sql
 SELECT course,
@@ -336,16 +336,15 @@ GROUP BY course;
 
 প্রতিটি Course-এর Highest GPA দেখাবে।
 
----
 
-## 💡 Important Rule
+### 💡 Important Rule
 
 `SELECT`-এ থাকা প্রতিটি Column অবশ্যই:
 
 - `GROUP BY`-তে থাকতে হবে, অথবা
 - Aggregate Function-এর ভিতরে থাকতে হবে।
 
----
+
 
 ### ✅ Correct
 
@@ -361,7 +360,7 @@ GROUP BY course;
 - `course` → GROUP BY-তে আছে
 - `COUNT(*)` → Aggregate Function
 
----
+
 
 ### ❌ Wrong
 
@@ -381,9 +380,10 @@ GROUP BY course;
 
 PostgreSQL Error দিবে।
 
----
 
-## 📌 GROUP BY vs Aggregate Function
+<br>
+
+### 📌 GROUP BY vs Aggregate Function
 
 Without GROUP BY:
 
@@ -413,9 +413,9 @@ Result:
 Average GPA for each course
 ```
 
----
 
-## 📌 Quick Comparison
+
+### 📌 Quick Comparison
 
 | Without GROUP BY | With GROUP BY |
 |------------------|---------------|
@@ -423,9 +423,9 @@ Average GPA for each course
 | Single Result | Multiple Results |
 | One Aggregate Value | One Aggregate Value per Group |
 
----
 
-## 🧠 Quick Memory Trick
+
+### 🧠 Quick Memory Trick
 
 ```text
 No GROUP BY → Whole Table Summary
@@ -433,9 +433,9 @@ No GROUP BY → Whole Table Summary
 GROUP BY → Group-wise Summary
 ```
 
----
 
-## 💡 Interview Tips
+
+### 💡 Interview Tips
 
 - `GROUP BY` Data-কে Group করে।
 - প্রতিটি Group-এর উপর Aggregate Function চালানো হয়।
@@ -443,9 +443,8 @@ GROUP BY → Group-wise Summary
 - `SELECT`-এর Non-Aggregated Column অবশ্যই `GROUP BY`-তে থাকতে হবে।
 - `GROUP BY` ছাড়া Aggregate Function পুরো Table-এর উপর কাজ করে।
 
----
 
-## 🔥 Golden Rule
+### 🔥 Golden Rule
 
 > Without `GROUP BY` → Aggregate Function works on the entire table.
 
@@ -453,22 +452,22 @@ GROUP BY → Group-wise Summary
 
 > Every non-aggregated column in `SELECT` must appear in the `GROUP BY` clause.
 
----
+<br>
 
-# 📌 HAVING Clause
+## 📌 HAVING Clause
 
-## Definition
+### Definition
 
 `HAVING` Grouped Data Filter করতে ব্যবহৃত হয়।
 
 - `WHERE` → Rows Filter করে  
 - `HAVING` → Groups Filter করে  
 
----
 
-## 🔄 WHERE vs HAVING
 
-### ✅ WHERE
+### 🔄 WHERE vs HAVING
+
+#### ✅ WHERE
 
 Aggregation-এর আগে Row Filter করে।
 
@@ -478,9 +477,9 @@ FROM students
 WHERE gpa > 3.80;
 ```
 
----
 
-### ✅ HAVING
+
+#### ✅ HAVING
 
 Aggregation-এর পরে Group Filter করে।
 
@@ -492,9 +491,9 @@ GROUP BY course
 HAVING AVG(gpa) > 3.80;
 ```
 
----
 
-## 📊 Common Usage
+
+### 📊 Common Usage
 
 ### 🔹 Groups with more than 2 students
 
@@ -505,7 +504,6 @@ GROUP BY course
 HAVING COUNT(*) > 2;
 ```
 
----
 
 ### 🔹 Groups with average GPA above 3.80
 
@@ -516,9 +514,9 @@ GROUP BY course
 HAVING AVG(gpa) > 3.80;
 ```
 
----
 
-## ❌ Common Mistake
+
+### ❌ Common Mistake
 
 ### Wrong
 
@@ -534,7 +532,6 @@ GROUP BY course;
 - `WHERE` aggregate function handle করতে পারে না
 - Aggregation এর পর filter করতে হয়
 
----
 
 ### ✅ Correct
 
@@ -545,9 +542,9 @@ GROUP BY course
 HAVING AVG(gpa) > 3.80;
 ```
 
----
 
-## ⚙️ Query Execution Order
+
+### ⚙️ Query Execution Order
 
 ```text
 FROM
@@ -565,18 +562,18 @@ ORDER BY
 LIMIT
 ```
 
----
 
-## 🧠 Quick Memory Trick
+
+### 🧠 Quick Memory Trick
 
 ```text
 WHERE  → Filter Rows
 HAVING → Filter Groups
 ```
 
----
 
-## 💡 Interview Tips
+
+### 💡 Interview Tips
 
 - `WHERE` aggregation-এর আগে কাজ করে
 - `HAVING` aggregation-এর পরে কাজ করে
@@ -584,31 +581,31 @@ HAVING → Filter Groups
 - Aggregate Result filter করতে সবসময় `HAVING` ব্যবহার করতে হবে
 - `HAVING` সাধারণত `GROUP BY`-এর সাথে ব্যবহার করা হয়
 
----
 
-## 🔥 Golden Rule
+
+### 🔥 Golden Rule
 
 > WHERE filters individual rows  
 > HAVING filters grouped results  
 
 > Aggregation-based filtering = HAVING
 
----
-# 📌 Common SQL Mistakes to Avoid
 
----
+## 📌 Common SQL Mistakes to Avoid
 
-## ❌ Mistake 1: WHERE with Aggregates
+
+
+### ❌ Mistake 1: WHERE with Aggregates
 
 `WHERE` দিয়ে aggregate function ব্যবহার করা।
 
-### ❌ Wrong
+#### ❌ Wrong
 
 ```sql
 WHERE AVG(gpa) > 3.80;
 ```
 
-### ✅ Correct
+#### ✅ Correct
 
 ```sql
 HAVING AVG(gpa) > 3.80;
@@ -619,11 +616,11 @@ HAVING AVG(gpa) > 3.80;
 - `WHERE` কাজ করে **GROUP BY-এর আগে**
 - Aggregate value তখনো তৈরি হয় না
 
----
 
-## ❌ Mistake 2: Non-grouped column without aggregate
 
-### ❌ Wrong
+### ❌ Mistake 2: Non-grouped column without aggregate
+
+#### ❌ Wrong
 
 ```sql
 SELECT course, name, COUNT(*)
@@ -631,7 +628,7 @@ FROM students
 GROUP BY course;
 ```
 
-### ✅ Correct
+#### ✅ Correct
 
 ```sql
 SELECT course, COUNT(*)
@@ -645,34 +642,33 @@ GROUP BY course;
 - না কোনো aggregate function-এর ভিতরে আছে
 → তাই SQL error দেয়
 
----
 
-## ❌ Mistake 3: Aggregate on Text Column
+### ❌ Mistake 3: Aggregate on Text Column
 
-### ❌ Wrong
+#### ❌ Wrong
 
 ```sql
 SELECT AVG(course)
 FROM students;
 ```
 
-### ✅ Correct
+#### ✅ Correct
 
 ```sql
 SELECT AVG(gpa)
 FROM students;
 ```
 
-### 💡 Reason
+#### 💡 Reason
 
 - `AVG(), SUM(), MIN(), MAX()` শুধু **numeric column**-এ কাজ করে
 - Text data-এর উপর কাজ করে না
 
----
 
-## ❌ Mistake 4: Not Using ROUND()
 
-### ❌ Ugly Output
+### ❌ Mistake 4: Not Using ROUND()
+
+#### ❌ Ugly Output
 
 ```sql
 SELECT AVG(gpa)
@@ -680,7 +676,7 @@ FROM students;
 -- 3.771428571428571
 ```
 
-### ✅ Clean Output
+#### ✅ Clean Output
 
 ```sql
 SELECT ROUND(AVG(gpa), 2)
@@ -688,23 +684,22 @@ FROM students;
 -- 3.77
 ```
 
-### 💡 Reason
+#### 💡 Reason
 
 - Default output অনেক বেশি decimal দেয়
 - `ROUND()` ব্যবহার করলে result clean ও readable হয়
 
----
 
-## 📊 Quick Summary
+### 📊 Quick Summary
 
 - WHERE ❌ aggregates → HAVING ✅
 - GROUP BY rule always follow করতে হবে
 - Aggregates only work on numeric data
 - `ROUND()` ব্যবহার করলে output clean হয়
 
----
 
-## 🔥 Golden Rules
+
+### 🔥 Golden Rules
 
 > WHERE = row-level filtering (before aggregation)
 
@@ -712,3 +707,354 @@ FROM students;
 
 > Aggregates always need correct column type (numeric)
 
+<br>
+
+## 📌 SQL String Functions: TRIM() & REPLACE()
+
+### ✂️ TRIM()
+
+### Definition
+
+`TRIM()` String-এর শুরু এবং শেষের অতিরিক্ত Space অথবা নির্দিষ্ট Character Remove করে।
+
+
+
+### Syntax
+
+```sql
+TRIM(string)
+```
+
+
+
+### Example
+
+```sql
+SELECT TRIM('   Hello World   ');
+```
+
+### Output
+
+```text
+Hello World
+```
+
+
+
+### Remove Specific Character
+
+```sql
+SELECT TRIM('x' FROM 'xxxHelloxxx');
+```
+
+### Output
+
+```text
+Hello
+```
+
+
+
+### Use Cases
+
+- User Input Clean করা
+- Extra Spaces Remove করা
+- Data Validation
+- Imported Data Cleanup
+
+
+
+### 🔄 REPLACE()
+
+### Definition
+
+`REPLACE()` String-এর নির্দিষ্ট অংশ খুঁজে অন্য Value দিয়ে Replace করে।
+
+
+### Syntax
+
+```sql
+REPLACE(string, old_value, new_value)
+```
+
+
+
+### Example
+
+```sql
+SELECT REPLACE('I love Java', 'Java', 'PostgreSQL');
+```
+
+### Output
+
+```text
+I love PostgreSQL
+```
+
+
+
+### Multiple Occurrences
+
+```sql
+SELECT REPLACE('aaa-bbb-aaa', 'aaa', 'xxx');
+```
+
+### Output
+
+```text
+xxx-bbb-xxx
+```
+
+
+
+### Use Cases
+
+- Text Correction
+- Data Cleaning
+- URL Modification
+- String Formatting
+- Updating Old Values
+
+
+
+### 📊 Quick Comparison
+
+| Function | Purpose |
+|----------|---------|
+| `TRIM()` | Remove Spaces / Characters |
+| `REPLACE()` | Replace Text |
+
+
+
+### 💡 Interview Tips
+
+### TRIM Example
+
+```sql
+SELECT TRIM('   Arfan   ');
+```
+
+### Result
+
+```text
+Arfan
+```
+
+
+
+### REPLACE Example
+
+```sql
+SELECT REPLACE('Hello Java', 'Java', 'SQL');
+```
+
+### Result
+
+```text
+Hello SQL
+```
+
+
+
+### 📌 TRIM vs REPLACE
+
+| Feature | TRIM() | REPLACE() |
+|----------|---------|-----------|
+| Removes Spaces | ✅ | ❌ |
+| Removes Specific Character | ✅ | ❌ |
+| Replaces Text | ❌ | ✅ |
+| Data Cleaning | ✅ | ✅ |
+
+
+### 🧠 Memory Trick
+
+```text
+TRIM    → Remove
+REPLACE → Change
+```
+
+
+
+### 📌 Quick Summary
+
+- `TRIM()` → String-এর শুরু ও শেষ থেকে Space বা Character Remove করে
+- `REPLACE()` → String-এর নির্দিষ্ট অংশ Replace করে
+- দুটোই Data Cleaning এবং Text Processing-এর জন্য খুব গুরুত্বপূর্ণ
+
+
+
+### 🔥 Golden Rule
+
+> Use `TRIM()` when you need to remove unwanted spaces or characters.
+
+> Use `REPLACE()` when you need to change one text value into another.
+
+
+## 📌 ALTER TABLE & CHECK Constraint
+
+
+
+### 🔧 ALTER TABLE
+
+### Definition
+
+`ALTER TABLE` Existing Table-এর Structure Modify করতে ব্যবহৃত হয়।
+
+
+
+### Common Operations
+
+- Rename Column
+- Add Column
+- Drop Column
+- Add Constraint
+- Remove Constraint
+
+
+
+### 🔄 Rename Column
+
+### Syntax
+
+```sql
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
+```
+
+
+
+### Example
+
+```sql
+ALTER TABLE student
+RENAME COLUMN name TO full_name;
+```
+
+
+### Verify
+
+```sql
+SELECT * FROM student;
+```
+
+### Result
+
+```text
+name → full_name
+```
+
+
+
+### ➕ Add Column
+
+```sql
+ALTER TABLE student
+ADD COLUMN email VARCHAR(255);
+```
+
+
+
+### ❌ Drop Column
+
+```sql
+ALTER TABLE student
+DROP COLUMN email;
+```
+
+
+
+## 🔐 CHECK Constraint
+
+### Definition
+
+`CHECK` Constraint নির্দিষ্ট Condition অনুযায়ী Data Validation করে।
+
+- Condition TRUE হলে → Data Insert/Update হবে  
+- Condition FALSE হলে → Error দেখাবে  
+
+
+
+### Syntax
+
+```sql
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name
+CHECK (condition);
+```
+
+
+
+### Example
+
+```sql
+ALTER TABLE student
+ADD CONSTRAINT chk_age
+CHECK (age >= 5 AND age <= 25);
+```
+
+
+
+### ✅ Valid Data
+
+```sql
+INSERT INTO student(age)
+VALUES (20);
+```
+
+### Result
+
+```text
+Success
+```
+
+
+
+### ❌ Invalid Data
+
+```sql
+INSERT INTO student(age)
+VALUES (30);
+```
+
+### Result
+
+```text
+ERROR: CHECK constraint violation
+```
+
+
+### 📊 Quick Summary
+
+| Command | Purpose |
+|---------|----------|
+| ALTER TABLE | Modify table structure |
+| RENAME COLUMN | Change column name |
+| ADD COLUMN | Add new column |
+| DROP COLUMN | Remove column |
+| CHECK | Validate data rules |
+
+
+
+### 💡 Interview Tips
+
+- `ALTER TABLE` → Existing table modify করার জন্য
+- `RENAME COLUMN` → Column name change
+- `CHECK` → Business rules enforce করে
+- Constraint name দেওয়া best practice
+
+
+
+### 🧠 Memory Trick
+
+```text
+ALTER TABLE → Modify Structure
+CHECK       → Validate Data
+```
+
+
+
+### 🔥 Golden Rule
+
+> Use `ALTER TABLE` when you need to change table structure.
+
+> Use `CHECK` when you need to enforce data validation rules.
